@@ -1,8 +1,8 @@
 namespace app\Controllers;
 
 use app\Models\Article;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
+use twig\Environment;
+use twig\Loader\FilesystemLoader;
 
 class ArticleController {
     private $articleModel;
