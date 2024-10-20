@@ -37,8 +37,6 @@ if ($url === '' || $url === '/') {
     $url = '/';
 }
 
-// Debug : affiche l'URL après ajustement
-var_dump($url);
 
 // Lancement du routeur
 $router->dispatch($url);

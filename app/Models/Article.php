@@ -9,7 +9,7 @@ class Article {
     }
 
     public function getAllArticles() {
-        $stmt = $this->pdo->query('SELECT * FROM articles');
+        $stmt = $this->pdo->query('SELECT * FROM article');
         return $stmt->fetchAll();
     }
 }
