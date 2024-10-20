@@ -40,3 +40,4 @@ if ($url === '' || $url === '/') {
 
 // Lancement du routeur
 $router->dispatch($url);
+
