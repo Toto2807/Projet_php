@@ -9,8 +9,13 @@ class Article {
     }
 
     public function getAllArticles() {
-        $stmt = $this->pdo->query('SELECT * FROM article');
-        return $stmt->fetchAll();
-    }
+        try {
+            $stmt = $this->pdo->query('SELECT * FROM article');
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            return [];
+        }
+    }       
 }
 ?>
