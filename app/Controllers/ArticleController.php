@@ -1,5 +1,4 @@
-<?php
-namespace App\Controllers;
+namespace app\Controllers;
 
 use app\Models\Article;
 use Twig\Environment;
@@ -13,19 +12,13 @@ class ArticleController {
         $this->articleModel = new Article($pdo);
 
         // Configuration de Twig
-        $loader = new FilesystemLoader('../app/Views');
+        $loader = new FilesystemLoader(__DIR__ . '/../Views'); // Utilisez un chemin absolu
         $this->twig = new Environment($loader);
     }
 
     // Affiche la liste de tous les articles
     public function listArticles() {
         $articles = $this->articleModel->getAllArticles();
-        echo $this->twig->render('articles.twig', ['articles' => $articles]);
-    }
-
-    // Affiche les articles par catégorie
-    public function listArticlesByCategory($category) {
-        $articles = $this->articleModel->getArticlesByCategory($category);
         echo $this->twig->render('articles.twig', ['articles' => $articles]);
     }
 }

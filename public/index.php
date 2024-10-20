@@ -15,7 +15,7 @@ $router->add('/', function() {
     echo "Welcome to the homepage!";
 });
 
-$router->add('/articles', function() use ($pdo) {
+$router->add('/article', function() use ($pdo) {
     $controller = new app\Controllers\ArticleController($pdo);
     $controller->listArticles();
 });
